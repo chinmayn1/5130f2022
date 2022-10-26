@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Mathakari-Chinmay Nandkishor_hw3_secondPhaseOfApp_form.cs">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true">
+
+    <div class="basicinfo">
+      <form submit="">
+        <label for="chk" aria-hidden="true">Basic information</label>
+        <input type="text" name="fullname" id="fullname" placeholder="Full Name" required="">
+        <input type="email" name="email" id="email" placeholder="Email" required="">
+        <input type="date" name="dob" id="dob" placeholder="Date of birth" required="">
+        <input type="text" name="placeofbirth" id="placeofbirth" placeholder="Place of birth" required="">
+        <label for="chk" aria-hidden="true">More about you</label>
+        <input type="text" name="degree" id="degree" placeholder="degree" required="">
+        <input type="text" name="workex" id="workex" placeholder="Write about your experience" required="">
+        <input type="text" name="familyinfo" id="familyinfo" placeholder="Write about your family" required="">
+        <input type="text" name="hobbies" id="hobbies" placeholder=" which browser you use and why?" required="">
+        <input type="text" name="futureplan" id="futureplan" placeholder="Do you allow cookies while working"
+          required="">
+        <input type="file" name="file">
+
+      </form>
+      <button id="btn">Sign up</button>
+    </div>
+  </div>
+  </div>
+</body>
+<script>
+  const id = document.getElementById("btn");
+  id.addEventListener("click", (e) => {
+    let fullname = document.getElementById("fullname").value;
+    let email = document.getElementById("email").value;
+    let dob = document.getElementById("dob").value;
+    let placeofbirth = document.getElementById("placeofbirth").value;
+    let degree = document.getElementById("degree").value;
+    let workex = document.getElementById("workex").value;
+    let familyinfo = document.getElementById("familyinfo").value;
+    let hobbies = document.getElementById("hobbies").value;
+    let futureplan = document.getElementById("futureplan").value;
+    var url = "https://chinmaymathaka.pythonanywhere.com/a";
+    fetch(url, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({ "fullname": fullname, "email": email, "dob": dob, "placeofbirth": placeofbirth, "degree": degree, "workex": workex, "familyinfo": familyinfo, "hobbies": hobbies, "futureplan": futureplan })
+    }).then(re => re.json())
+    alert("success")
+  })
+
+
+
+</script>
+
+</html>

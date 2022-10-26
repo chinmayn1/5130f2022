@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chinmay Mathakari </title>
+     <link rel="stylesheet" type="text/css" href="Mathakari-Chinmay Nandkishor_hw2-firstApp.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1          ,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+
+
+#custom-button {
+  padding: 10px;
+  color: white;
+  background-color: #009578;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#custom-button:hover {
+  background-color: #00b28f;
+}
+
+#custom-text {
+  margin-left: 10px;
+  font-family: sans-serif;
+  color: #aaa;
+}
+
+</style>
+    <script>
+        function savefile() {
+            let formdata = new FormData();
+            formdata.append("file", fileupload.files[0]);
+            alert(fetch("'C:/Users/nandk/OneDrive/Desktop/IWS APP/Mathakari-Chinmay Nandkishor_hw3_secondPhaseOfApp_upload.php'", { method: "POST", body: formdata }));
+            alert("Uploaded successfully")
+        }
+
+    </script>
+</head>
+
+
+
+<div class="content">
+    <h4>Hello, I am</h4>
+    <h2> <span>Chinmay Mathakari</span></h2>
+    <h3> Umass student</h3>
+    <h4>Worked as Software engineer as .net developer for 5 years at google</h4>
+
+    
+</div>
+
+<body>
+
+  <input type="file" id="fileupload" name="fileupload" id="custom-button" style="color:white"/>
+    <button id="upload-button" onclick="savefile()">Upload</button> 
