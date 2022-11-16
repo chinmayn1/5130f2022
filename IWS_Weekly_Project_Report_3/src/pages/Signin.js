@@ -27,7 +27,7 @@ export default class Signin extends Component {
         this.setState({ [name]: value, error: {} });
     }
     handleFocus = () => {
-        //this.setState({ error: Validator(this.state) })
+        this.setState({ error: Validator(this.state) })
     }
 
     handleSubmit = e => {

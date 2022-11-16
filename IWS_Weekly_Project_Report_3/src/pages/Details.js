@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Layout from '../layout/FormLayout'
 import Button from 'react-bootstrap/Button'
 import axios from 'axios';
-import { Navigate } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { Validator } from '../Components/Validator';
 export default class Details extends Component {
     constructor(props) {
@@ -83,7 +83,7 @@ export default class Details extends Component {
     }
     render() {
         if (this.state.status) {
-            return <Navigate push to={{ pathname: "/" }} />
+            return <Redirect push to={{ pathname: "/" }} />
         }
         return (
             <Layout>
